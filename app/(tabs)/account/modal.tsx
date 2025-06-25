@@ -2,7 +2,7 @@ import { AppText } from '@/components/app-text'
 import { AppView } from '@/components/app-view'
 import { useLocalSearchParams, useRouter } from 'expo-router'
 import { useWalletUi } from '@/components/solana/use-wallet-ui'
-import { Button } from '@react-navigation/elements'
+import { Button } from 'react-native-paper'
 import { AccountUiModalAirdrop } from '@/components/account/account-ui-modal-airdrop'
 import { AccountUiModalSend } from '@/components/account/account-ui-modal-send'
 import { AccountUiModalReceive } from '@/components/account/account-ui-modal-receive'
@@ -25,8 +25,10 @@ export default function AccountModalRoute() {
   return (
     <AppView style={{ flex: 1, padding: 16, gap: 16 }}>
       <AppView style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
-        <AppText type="title">{page.title}</AppText>
-        <Button onPressIn={() => router.back()}>Back</Button>
+        <AppText variant="headlineMedium">{page.title}</AppText>
+        <Button mode="outlined" onPressIn={() => router.back()}>
+          Back
+        </Button>
       </AppView>
       {page.element}
     </AppView>

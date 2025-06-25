@@ -2,7 +2,7 @@ import { AppView } from '@/components/app-view'
 import { AppText } from '@/components/app-text'
 import { PublicKey } from '@solana/web3.js'
 import { useWalletUi } from '@/components/solana/use-wallet-ui'
-import { Button } from '@react-navigation/elements'
+import { Button } from 'react-native-paper'
 import React from 'react'
 import { ActivityIndicator } from 'react-native'
 import { useRequestAirdrop } from '@/components/account/use-request-airdrop'
@@ -14,7 +14,7 @@ export function AccountUiModalAirdrop({ back }: { back: () => void }) {
 
   return (
     <AppView>
-      <AppText type="subtitle">Request a 1 SOL airdrop to the connected wallet.</AppText>
+      <AppText variant="titleMedium">Request a 1 SOL airdrop to the connected wallet.</AppText>
       {requestAirdrop.isPending ? (
         <ActivityIndicator />
       ) : (
@@ -29,7 +29,7 @@ export function AccountUiModalAirdrop({ back }: { back: () => void }) {
               })
               .catch((err) => console.log(`Error requesting airdrop: ${err}`, err))
           }}
-          variant="filled"
+          mode="contained"
         >
           Request Airdrop
         </Button>

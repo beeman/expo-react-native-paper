@@ -7,15 +7,12 @@ export function SettingsAppConfig() {
   const { name, url } = useAppConfig()
   return (
     <AppView>
-      <AppText type="subtitle">App Config</AppText>
-      <AppText type="default">
-        Name <AppText type="defaultSemiBold">{name}</AppText>
+      <AppText variant="titleMedium">App Config</AppText>
+      <AppText>
+        Name: <AppText>{name}</AppText>
       </AppText>
-      <AppText type="default">
-        URL{' '}
-        <AppText type="link">
-          <AppExternalLink href={url as AppExternalLinkProps['href']}>{url}</AppExternalLink>
-        </AppText>
+      <AppText>
+        URL: <AppExternalLink href={url as AppExternalLinkProps['href']}>{url}</AppExternalLink>
       </AppText>
     </AppView>
   )

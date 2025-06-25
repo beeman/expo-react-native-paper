@@ -4,7 +4,7 @@ import { AppText } from '@/components/app-text'
 export function DevFeature() {
   return (
     <AppView>
-      <AppText type="subtitle">Development</AppText>
+      <AppText variant="titleMedium">Development</AppText>
       <AppText>Start building your features here.</AppText>
     </AppView>
   )

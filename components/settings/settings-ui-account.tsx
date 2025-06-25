@@ -8,7 +8,7 @@ export function SettingsUiAccount() {
   const { account } = useWalletUi()
   return (
     <AppView>
-      <AppText type="subtitle">Account</AppText>
+      <AppText variant="titleMedium">Account</AppText>
       {account ? (
         <AppView style={{ flexDirection: 'column', justifyContent: 'flex-end' }}>
           <AppText>Connected to {ellipsify(account.publicKey.toString(), 8)}</AppText>
