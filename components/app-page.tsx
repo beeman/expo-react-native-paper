@@ -1,11 +1,12 @@
 import React, { PropsWithChildren } from 'react'
-import { SafeAreaView } from 'react-native-safe-area-context'
 import { AppView, AppViewProps } from '@/components/app-view'
+import { useAppTheme } from '@/components/app-theme'
 
 export function AppPage({ children, ...props }: PropsWithChildren<AppViewProps>) {
+  const { spacing } = useAppTheme()
   return (
-    <AppView style={{ flex: 1 }} {...props}>
-      <SafeAreaView style={{ flex: 1, gap: 16, paddingHorizontal: 16 }}>{children}</SafeAreaView>
+    <AppView style={{ flex: 1, gap: spacing.md, padding: spacing.md }} {...props}>
+      {children}
     </AppView>
   )
 }

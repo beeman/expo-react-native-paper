@@ -7,8 +7,10 @@ import React, { useState } from 'react'
 import { useWalletUi } from '../solana/use-wallet-ui'
 import { useRequestAirdrop } from '@/components/account/use-request-airdrop'
 import { useTransferSol } from '@/components/account/use-transfer-sol'
+import { useAppTheme } from '@/components/app-theme'
 
 export function AccountUiModalSend({ address }: { address: PublicKey }) {
+  const { spacing } = useAppTheme()
   const { account } = useWalletUi()
   const requestAirdrop = useRequestAirdrop({ address: account?.publicKey as PublicKey })
   const transferSol = useTransferSol({ address })
@@ -21,7 +23,7 @@ export function AccountUiModalSend({ address }: { address: PublicKey }) {
       {requestAirdrop.isPending ? (
         <ActivityIndicator />
       ) : (
-        <View style={{ gap: 16 }}>
+        <View style={{ gap: spacing.md }}>
           <TextInput label="Amount (SOL)" value={amount} onChangeText={setAmount} keyboardType="numeric" />
           <TextInput label="Destination Address" value={destinationAddress} onChangeText={setDestinationAddress} />
           <Button

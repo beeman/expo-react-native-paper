@@ -1,23 +1,16 @@
 import { Tabs } from 'expo-router'
 import React from 'react'
 import { UiIconSymbol } from '@/components/ui/ui-icon-symbol'
-import { Colors } from '@/constants/colors'
-import { useColorScheme } from '@/hooks/use-color-scheme'
 import { WalletUiDropdown } from '@/components/solana/wallet-ui-dropdown'
-import { View } from 'react-native'
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme()
-
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        headerRight: () => (
-          <View style={{ paddingRight: 16 }}>
-            <WalletUiDropdown />
-          </View>
-        ),
+        headerRight: () => <WalletUiDropdown />,
+        headerRightContainerStyle: {
+          paddingRight: 16,
+        },
       }}
     >
       {/* The index redirects to the account screen */}

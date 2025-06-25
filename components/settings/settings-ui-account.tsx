@@ -9,17 +9,12 @@ export function SettingsUiAccount() {
   return (
     <AppView>
       <AppText variant="titleMedium">Account</AppText>
-      {account ? (
-        <AppView style={{ flexDirection: 'column', justifyContent: 'flex-end' }}>
-          <AppText>Connected to {ellipsify(account.publicKey.toString(), 8)}</AppText>
-          <WalletUiDisconnectButton />
-        </AppView>
-      ) : (
-        <AppView style={{ flexDirection: 'column', justifyContent: 'flex-end' }}>
-          <AppText>Connect your wallet.</AppText>
-          <WalletUiConnectButton />
-        </AppView>
-      )}
+      <AppText>
+        {account ? `Connected to ${ellipsify(account.publicKey.toString(), 8)}` : 'Connect your wallet.'}
+      </AppText>
+      <AppView style={{ alignItems: 'flex-end' }}>
+        {account ? <WalletUiDisconnectButton /> : <WalletUiConnectButton />}
+      </AppView>
     </AppView>
   )
 }

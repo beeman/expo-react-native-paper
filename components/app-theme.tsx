@@ -21,6 +21,13 @@ export function useAppTheme() {
     colorScheme,
     isDark,
     theme,
+    spacing: {
+      xs: 4,
+      sm: 8,
+      md: 16,
+      lg: 24,
+      xl: 32,
+    },
   }
 }
 

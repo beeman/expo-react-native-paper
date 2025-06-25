@@ -1,35 +1,20 @@
-import { Link, Stack } from 'expo-router'
-import { StyleSheet } from 'react-native'
-
+import { Stack, useRouter } from 'expo-router'
 import { AppText } from '@/components/app-text'
-
 import { AppView } from '@/components/app-view'
+import { Button } from 'react-native-paper'
+import { useAppTheme } from '@/components/app-theme'
 
 export default function NotFoundScreen() {
+  const { spacing } = useAppTheme()
+  const router = useRouter()
+
   return (
-    <>
+    <AppView style={{ flex: 1, alignItems: 'center', justifyContent: 'center', gap: spacing.lg }}>
       <Stack.Screen options={{ title: 'Oops!' }} />
-      <AppView style={styles.container}>
-        <AppText variant="headlineMedium" style={{ textAlign: 'center' }}>
-          This screen does not exist.
-        </AppText>
-        <Link href="/" style={styles.link}>
-          <AppText>Go to home screen!</AppText>
-        </Link>
-      </AppView>
-    </>
+      <AppText variant="headlineMedium">This screen does not exist.</AppText>
+      <Button mode="contained-tonal" onPressIn={() => router.replace('/')}>
+        Go to home screen!
+      </Button>
+    </AppView>
   )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: 20,
-  },
-  link: {
-    marginTop: 15,
-    paddingVertical: 15,
-  },
-})

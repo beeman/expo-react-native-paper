@@ -12,11 +12,13 @@ export function SettingsUiCluster() {
       <AppText variant="titleMedium">Cluster</AppText>
       <ClusterUiVersion selectedCluster={selectedCluster} />
       <ClusterUiGenesisHash selectedCluster={selectedCluster} />
-      <AppDropdown
-        items={clusters.map((c) => c.name)}
-        selectedItem={selectedCluster.name}
-        selectItem={(name) => setSelectedCluster(clusters.find((c) => c.name === name)!)}
-      />
+      <AppView style={{ alignItems: 'flex-end' }}>
+        <AppDropdown
+          items={clusters.map((c) => c.name)}
+          selectedItem={selectedCluster.name}
+          selectItem={(name) => setSelectedCluster(clusters.find((c) => c.name === name)!)}
+        />
+      </AppView>
     </AppView>
   )
 }
