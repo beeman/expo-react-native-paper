@@ -46,7 +46,7 @@ export function AccountFeature() {
         </ScrollView>
       ) : (
         <AppView style={{ flexDirection: 'column', justifyContent: 'flex-end' }}>
-          <AppText>Connect your wallet.</AppText>
+          <AppText variant="titleMedium">Connect your wallet.</AppText>
           <WalletUiConnectButton />
         </AppView>
       )}

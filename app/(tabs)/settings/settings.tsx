@@ -1,7 +1,7 @@
-import { SettingsUiCluster } from '@/components/settings/settings-ui-cluster'
 import { AppText } from '@/components/app-text'
 import { SettingsAppConfig } from '@/components/settings/settings-app-config'
 import { SettingsUiAccount } from '@/components/settings/settings-ui-account'
+import { SettingsUiCluster } from '@/components/settings/settings-ui-cluster'
 
 import { AppPage } from '@/components/app-page'
 

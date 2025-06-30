@@ -6,7 +6,7 @@ import { Button } from 'react-native-paper'
 import Clipboard from '@react-native-clipboard/clipboard'
 import { useAppTheme } from '@/components/app-theme'
 
-export function AccountUiModalReceive({ address }: { address: PublicKey }) {
+export function AccountFeatureReceive({ address }: { address: PublicKey }) {
   const { spacing } = useAppTheme()
   return (
     <AppView style={{ gap: spacing.md }}>

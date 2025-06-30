@@ -1,18 +1,10 @@
 import { Tabs } from 'expo-router'
 import React from 'react'
 import { UiIconSymbol } from '@/components/ui/ui-icon-symbol'
-import { WalletUiDropdown } from '@/components/solana/wallet-ui-dropdown'
 
 export default function TabLayout() {
   return (
-    <Tabs
-      screenOptions={{
-        headerRight: () => <WalletUiDropdown />,
-        headerRightContainerStyle: {
-          paddingRight: 16,
-        },
-      }}
-    >
+    <Tabs screenOptions={{ headerShown: false }}>
       {/* The index redirects to the account screen */}
       <Tabs.Screen name="index" options={{ tabBarItemStyle: { display: 'none' } }} />
       <Tabs.Screen
@@ -30,9 +22,9 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="dev"
+        name="demo"
         options={{
-          title: 'Development',
+          title: 'Demo',
           tabBarIcon: ({ color }) => <UiIconSymbol size={28} name="ladybug.fill" color={color} />,
         }}
       />
